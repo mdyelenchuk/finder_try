@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using System.Collections.Generic;
 
 public class SelectController : MonoBehaviour
@@ -21,6 +21,13 @@ public class SelectController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(1) && players.Count > 0)
+        {
+            Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit agentTarget, 1000f, layer))
+                foreach (var el in players)
+                    el.GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(agentTarget.point);
+        }
         if (_cam == null) return;
 
         // Клик мышью — создаём куб
@@ -80,6 +87,7 @@ public class SelectController : MonoBehaviour
 
              foreach (var el in  hits)
              {
+                 if(el.collider.CompareTag("Enemy")) continue;
                  players.Add(el.transform.gameObject);
                  el.transform.GetChild(0).gameObject.SetActive(true);
              }

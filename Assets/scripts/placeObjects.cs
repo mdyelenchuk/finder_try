@@ -34,10 +34,12 @@ public class PlaceObjects : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 1000f, layer))
 
             if (Input.GetKey(KeyCode.LeftShift))
+            {
                 transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
-                
-            
-        
+            }
+
+
+
         {
             Vector3 currentPos = transform.position;
             Vector3 hitPos = hit.point;
@@ -48,6 +50,7 @@ public class PlaceObjects : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            gameObject.GetComponent<AutoCarCreate>().enabled = true;
             Destroy(this); // Удаляет этот скрипт
         }
      }
