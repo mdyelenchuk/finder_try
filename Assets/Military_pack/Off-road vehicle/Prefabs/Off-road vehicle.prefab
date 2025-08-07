@@ -786,6 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 20
+  bullet: {fileID: 6062537826058761410, guid: 1cfd8ac5147f24645bcd7f25b75b42f7, type: 3}
 --- !u!1 &7846259950683624633
 GameObject:
   m_ObjectHideFlags: 0
