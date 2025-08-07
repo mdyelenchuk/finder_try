@@ -135,8 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ea357e89bb74c2e9c1f4f5ebe0b9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEnemy: 0
   car: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
-  time: 5
+  time: 180
 --- !u!65 &6286838886464104507
 BoxCollider:
   m_ObjectHideFlags: 0

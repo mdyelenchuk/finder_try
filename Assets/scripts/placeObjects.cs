@@ -45,7 +45,7 @@ public class PlaceObjects : MonoBehaviour
             Vector3 hitPos = hit.point;
 
             // Меняем только X и Z, Y оставляем как был
-            transform.position = new Vector3(hitPos.x, 3, hitPos.z);
+            transform.position = new Vector3(hitPos.x, 2, hitPos.z);
         }
 
         if (Input.GetMouseButtonDown(0))
